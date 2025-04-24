@@ -1,0 +1,32 @@
+{
+    "admins": [
+      {
+        "id": 1,
+        "username": "admin",
+        "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "Mini Cake Thailand",
+        "price": 5000,
+        "description": "Rasa Otentik dalam Ukuran Mini yang Menggemaskan",
+        "image": "images/uploads/produk (1).jpeg"
+      },
+      {
+        "id": 2,
+        "name": "Cookies",
+        "price": 15000,
+        "description": "Nikmati koleksi cookies kami dengan aneka rasa yang lezat, mulai dari cokelat, vanila, hingga rasa unik lainnya. Setiap gigitan menghadirkan kelezatan yang memanjakan lidah. Pesan sekarang dan temukan favoritmu",
+        "image": "images/uploads/produk (2).jpeg"
+      },
+      {
+        "id": 2,
+        "name": "Cookies Custom",
+        "price": 35000,
+        "description": "Buat Camilan Impianmu Sendiri! Pilih bentuk, rasa, dan desain sesuai keinginanmu. Cocok untuk acara spesial, hadiah, atau sekadar memanjakan diri sendiri. Pesan sekarang dan nikmati cookies yang unik dan personal",
+        "image": "images/uploads/produk (3).jpeg"
+      }
+    ]
+  }
