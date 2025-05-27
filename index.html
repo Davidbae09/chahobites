@@ -20,6 +20,7 @@
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
+    position: relative;
   }
 
   header {
@@ -27,14 +28,13 @@
     position: relative;
   }
 
-  /* Logo di pojok kiri atas */
   .site-logo {
-    position: absolute;
+    position: absolute; /* Changed from fixed to absolute */
     top: 20px;
     left: 20px;
     width: 60px;
     height: auto;
-    z-index: 10;
+    z-index: 100;
   }
 
   .logo {
@@ -202,10 +202,10 @@
 </style>
 </head>
 <body>
+  <img src="./icon.jpeg" alt="Logo Chaho Bites" class="site-logo" />
   <div class="container" role="main">
     <header>
       <!-- Logo di pojok -->
-      <img src="./icon.jpeg" alt="Logo Chaho Bites" class="site-logo" />
 
       <h1 class="logo">Chaho Bites</h1>
       <p class="tagline">Kenikmatan di Setiap Gigitan!</p>
