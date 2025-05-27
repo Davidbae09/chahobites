@@ -1,78 +1,303 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaho</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chaho Bites - Kenikmatan di Setiap Gigitan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins :wght@300;600&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff5e6;
+    color: #4b2e15;
+    position: relative;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  header {
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  /* Logo di pojok kiri atas */
+  .site-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: auto;
+    z-index: 10;
+  }
+
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.8rem;
+    color: #d2691e;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #8b4513;
+    letter-spacing: 1px;
+  }
+
+  /* Carousel styles */
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-height: 320px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    margin-top: 40px;
+  }
+
+  .carousel img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    display: none;
+    border-radius: 20px;
+  }
+
+  .carousel img.active {
+    display: block;
+  }
+
+  .description {
+    margin: 50px 0 40px 0;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #6b4b2d;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section {
+    background-color: #f8ecd4;
+    border-radius: 15px;
+    padding: 30px 25px;
+    margin: 60px auto 40px auto;
+    max-width: 700px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(210,105,30,0.15);
+  }
+
+  section h2 {
+    font-family: 'Pacifico', cursive;
+    color: #d2691e;
+    font-size: 2.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .promo-list, .testimonial-list {
+    list-style: none;
+    padding-left: 0;
+    color: #6b4b2d;
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+
+  .promo-list li, .testimonial-list li  {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .promo-list li::before {
+    content: "🍪";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 1.3rem;
+  }
+
+  .testimonial-list li::before {
+    content: "“";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 2.2rem;
+    color: #d2691e;
+  }
+
+  .testimonial-author {
+    font-weight: 600;
+    margin-top: 6px;
+    text-align: right;
+    font-style: italic;
+    color: #a05b21;
+  }
+
+  .btn-order {
+    background-color: #d2691e;
+    color: white;
+    font-size: 1.2rem;
+    padding: 17px 50px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #b85e15;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 40px auto 80px auto;
+    max-width: 240px;
+  }
+
+  .btn-order:hover {
+    background-color: #b85e15;
+    box-shadow: 0 6px 14px #933f0c;
+  }
+
+  footer {
+    margin-top: 20px;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #8c6d4a;
+    border-top: 1px solid #d2a679;
+  }
+
+  .social-links a {
+    margin: 0 12px;
+    color: #d2691e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #b85e15;
+  }
+
+  @media (max-width: 600px) {
+    .logo {
+      font-size: 2.8rem;
+    }
+    .btn-order {
+      width: 90%;
+      padding: 15px 0;
+      max-width: none;
+    }
+    .carousel img {
+      max-height: 220px;
+    }
+    section {
+      padding: 25px 20px;
+      margin: 40px 15px 40px 15px;
+    }
+  }
+</style>
 </head>
 <body>
-    <!-- Navigasi -->
-    <nav>
-        <a href="#home" class="logo"><img src="images/logo.jpeg" alt="Logo"></a>
-        <button class="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="https://wa.me/+6289670206710?text=Halo%20Min%20Bites,%20Aku%20lagi%20ingin%20tanya%20nih%20tentang%20produk." target="_blank" class="shopee-btn"><i class="fas fa-shopping-cart"></i>Contact</a></li>
-            <li><a href="#admin">Admin</a></li>
-        </ul>
-    </nav>
+  <div class="container" role="main">
+    <header>
+      <!-- Logo di pojok -->
+      <img src="./icon.jpeg" alt="Logo Chaho Bites" class="site-logo" />
 
-    <!-- Konten Dinamis -->
-    <div id="content"></div>
+      <h1 class="logo">Chaho Bites</h1>
+      <p class="tagline">Kenikmatan di Setiap Gigitan!</p>
 
-    <!-- Modal -->
-    <div id="detail_modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <img id="modal_image" src="" alt="Product Image">
-            <h3 id="modal_name"></h3>
-            <p id="modal_description"></p>
-            <p class="price" id="modal_price"></p>
-            <button onclick="closeDetailModal()">Tutup</button>
-        </div>
-    </div>
+      <!-- Carousel -->
+      <div class="carousel" id="carousel">
+        <img src="./produk(1).jpeg" alt="Produk 1" class="active">
+        <img src="./produk(2).jpeg" alt="Produk 2">
+        <img src="./produk(3).jpeg" alt="Produk 3">
+      </div>
+    </header>
 
-    <div id="zoom_modal" class="zoom-modal">
-        <div class="zoom-modal-content">
-            <span class="close-zoom" onclick="closeZoomModal()">×</span>
-            <img id="zoom_image" src="" alt="Zoomed Image">
-        </div>
-    </div>
+    <section aria-labelledby="welcome">
+      <h2 id="welcome">Selamat Datang di Chaho Bites</h2>
+      <p class="description">
+        Di Chaho Bites, kami membawa Anda ke sudut manis yang hangat di mana setiap kue dan kue kering dibuat dengan penuh cinta untuk memperindah hari Anda.
+        Apakah Anda menginginkan yang renyah, lengket, atau lembut, kue dan kue kering kami dipanggang segar setiap hari dengan bahan berkualitas dan dedikasi terhadap kualitas.
+      </p>
+    </section>
 
-    <div id="edit_modal" class="edit-modal">
-        <div class="edit-modal-content">
-            <h3>Edit Produk</h3>
-            <form id="edit_form">
-                <input type="hidden" id="edit_id">
-                <input type="hidden" id="edit_current_image">
-                <label for="edit_name">Nama Produk</label>
-                <input type="text" id="edit_name" required>
-                <label for="edit_price">Harga (Rp)</label>
-                <input type="number" id="edit_price" required>
-                <label for="edit_description">Deskripsi</label>
-                <textarea id="edit_description" required></textarea>
-                <label for="edit_image">Gambar (Opsional)</label>
-                <div class="current-image" id="current_image"></div>
-                <div class="file-input-wrapper">
-                    <input type="file" id="edit_image" accept="image/*">
-                    <span id="current_file_name" class="current-file-name"></span>
-                </div>
-                <div class="button-group">
-                    <button type="submit">Simpan</button>
-                    <button type="button" onclick="closeEditForm()">Batal</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    <section aria-labelledby="why-choose">
+      <h2 id="why-choose">Mengapa Memilih Chaho Bites?</h2>
+      <ul class="promo-list">
+        <li><strong>Passion di Setiap Resep:</strong> Cinta pendiri kami terhadap baking menggerakkan setiap batch. Resep yang sempurna dan diwariskan, menyajikan rasa otentik yang membangkitkan kenyamanan dan kebahagiaan.</li>
+        <li><strong>Bahan Berkualitas Tinggi:</strong> Kami hanya menggunakan mentega asli, vanila murni, telur segar, cokelat berkualitas, dan tepung organik untuk memastikan setiap gigitan penuh dengan rasa yang kaya dan kebaikan yang sehat.</li>
+        <li><strong>Dibuat Segar Setiap Hari:</strong> Kami memanggang dalam jumlah kecil sehingga Anda selalu menikmati produk kami dalam keadaan paling segar dengan aroma yang tak tertahankan.</li>
+        <li><strong>Beragam Rasa & Camilan:</strong> Dari kue kering cokelat klasik hingga kue red velvet yang kaya dan spesial musiman, ada sesuatu untuk setiap selera manis.</li>
+        <li><strong>Dibuat dengan Tangan:</strong> Setiap kue dan kue kering dibentuk dan dihias dengan tangan, memastikan kualitas artisanal yang unik yang tidak dapat Anda temukan di tempat lain.</li>
+        <li><strong>Hadiah Sempurna & Kue Perayaan:</strong> Rayakan momen penting, hari raya, atau kejutan untuk orang terkasih dengan kotak hadiah yang indah dan kue kustom kami.</li>
+        <li><strong>Pengemasan Ramah Lingkungan:</strong> Kami peduli pada planet ini sama seperti kepuasan Anda. Pengemasan kami menggunakan bahan daur ulang dan ramah lingkungan.</li>
+        <li><strong>Jaminan Kepuasan Pelanggan:</strong> Kebahagiaan Anda adalah prioritas kami. Jika Anda tidak puas, kami akan memperbaikinya dengan penggantian atau pengembalian uang—tanpa pertanyaan.</li>
+      </ul>
+    </section>
 
-    <!-- JavaScript -->
-    <script src="scripts.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'931169f18af9ada7',t:'MTc0NDc4MjcxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <section aria-labelledby="our-story">
+      <h2 id="our-story">Kisah Kami</h2>
+      <p class="description">
+        Chaho Bites dimulai sebagai proyek kecil di dapur rumah yang nyaman, terinspirasi oleh resep keluarga yang nostalgis dan cinta untuk berbagi kebahagiaan melalui makanan manis. 
+        Selama bertahun-tahun, toko kue kecil kami telah tumbuh dengan dukungan tulus dari komunitas kami, selalu menjaga dedikasi yang sama terhadap kualitas, rasa, dan perhatian kepada pelanggan. 
+        Kami percaya bahwa kue dan kue kering bukan hanya makanan penutup—mereka adalah potongan kecil kebahagiaan yang dimaksudkan untuk menyatukan orang-orang.
+      </p>
+    </section>
+
+    <section aria-labelledby="testimonials">
+      <h2 id="testimonials">Apa Kata Pelanggan Kami</h2>
+      <ul class="testimonial-list">
+        <li>
+          Kue kering yang paling lezat yang pernah saya coba! Lembut, lengket, dan penuh dengan cokelat. Membuat setiap hari sedikit lebih manis.
+          <div class="testimonial-author">— Maya S.</div>
+        </li>
+        <li>
+          Kue-kue ini sangat indah dan lezat! Sempurna untuk pesta ulang tahun saya. Semua orang terus bertanya dari mana mereka berasal.
+          <div class="testimonial-author">— Rizky W.</div>
+        </li>
+        <li>
+          Saya suka bahwa mereka menggunakan bahan alami dan kemasannya ramah lingkungan. Rasa yang hebat dan bisnis yang bertanggung jawab.
+          <div class="testimonial-author">— Dita P.</div>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="special-offers">
+      <h2 id="special-offers">Penawaran Spesial untuk Anda</h2>
+      <ul class="promo-list">
+        <li><strong>Promo Selamat Datang:</strong> Nikmati diskon 10% untuk pesanan pertama Anda ketika Anda menyebutkan kode <em>CHAHOBITES10</em>.</li>
+        <li><strong>Paket Spesial:</strong> Dapatkan satu kue kering gratis dengan setiap pembelian kue – karena satu gigitan tidak pernah cukup!</li>
+        <li><strong>Rasa Musiman:</strong> Cobalah camilan eksklusif yang dibuat khusus untuk musim dan hari raya.</li>
+      </ul>
+      <p class="description" style="text-align:center; margin-top:25px; font-weight:600; color:#b85e15;">
+        Jangan lewatkan—pesan sekarang dan manjakan diri Anda atau orang terkasih dengan kebahagiaan termanis!
+      </p>
+    </section>
+
+    <button class="btn-order" onclick="alert('Terima kasih atas minat Anda! Silakan hubungi kami melalui WhatsApp untuk memesan. Kami siap menyajikan Chaho Bites yang lezat untuk Anda!')">Pesan Sekarang</button>
+
+    <footer>
+      <p>Hubungi kami:</p>
+      <div class="social-links">
+        <a href="https://wa.me/6289670206710" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <p>&copy; 2024 Chaho Bites. Semua hak dilindungi.</p>
+    </footer>
+  </div>
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let index = 0;
+
+    setInterval(() => {
+      images.forEach(img => img.classList.remove('active'));
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 3000); // Ganti gambar setiap 3 detik
+  </script>
+</body>
 </html>
