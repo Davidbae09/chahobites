@@ -56,17 +56,20 @@
   }
 
   .nav-brand {
+    justify-content: center;
     font-size: 1.3rem;
     margin-bottom: 10px;
   }
 
   .nav-links {
+    justify-content: center;
     flex-direction: column;
     width: 100%;
     gap: 10px;
   }
 
   .nav-links a {
+    justify-content: center;
     display: block;
     width: 100%;
     padding: 8px 12px;
