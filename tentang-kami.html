@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang Kami - Chaho Bites</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff5e6;
+      color: #4b2e15;
+      position: relative;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero {
+      background-color: #f8ecd4;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 15px;
+      margin: 20px auto 40px auto;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      color: #d2691e;
+      margin-bottom: 20px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6b4b2d;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 20px;
+      margin-bottom: 60px;
+    }
+
+    .about-content {
+      background-color: #f8ecd4;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 0 auto;
+      max-width: 800px;
+      box-shadow: 0 4px 10px rgba(210,105,30,0.15);
+    }
+
+    .about-content h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.2rem;
+      color: #d2691e;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6b4b2d;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .feature-card {
+      background-color: #fff5e6;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(210,105,30,0.15);
+      max-width: 400px;
+      flex: 1 1 350px;
+      text-align: center;
+    }
+
+    .feature-card i {
+        font-size: 3rem;
+        color: #d2691e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
+        margin: 0 auto 20px auto;
+        background-color: #f8ecd4;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(210, 105, 30, 0.1);
+    }
+
+    .feature-card h3 {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: #8b4513;
+      margin: 15px 0;
+    }
+
+    .feature-card p {
+      font-size: 1.1rem;
+      color: #6b4b2d;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #8c6d4a;
+      border-top: 1px solid #d2a679;
+      text-align: center;
+    }
+
+    .social-links a {
+      margin: 0 12px;
+      color: #d2691e;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #b85e15;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .about-content h2 {
+        font-size: 1.8rem;
+      }
+      
+      .feature-card {
+        padding: 20px;
+      }
+      
+      .feature-card h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-brand {
+        font-size: 1.2rem;
+      }
+      
+      .nav-links {
+        gap: 10px;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .about-content {
+        padding: 20px;
+      }
+    }
+    
+  </style>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="./icon.jpeg" alt="Logo Chaho Bites" class="navbar-logo" />
+      <span>Chaho Bites</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tentang-kami.html">Tentang Kami</a></li>
+    </ul>
+  </nav>
+
+  <div class="container" role="main">
+    <div class="hero">
+      <div>
+        <h1>Chaho Bites</h1>
+        <p>Kami adalah penyedia Cookies dan Cake lezat yang dibuat dengan cinta dan perhatian pada detail. Dengan komitmen pada kualitas dan rasa, kami bertujuan memberikan pengalaman kuliner yang menyenangkan bagi Anda. Dari mini cake hingga cookies custom, kami menyediakan berbagai pilihan untuk memanjakan lidah Anda. Terima kasih telah memilih kami sebagai bagian dari momen spesial Anda!"</p>
+      </div>
+    </div>
+
+    <div class="about-container">
+      <div class="about-content">
+        <h2>Kami Chaho Cakes</h2>
+        <p>Kepercayaan Anda adalah prioritas kami. Kami berkomitmen untuk menyajikan produk berkualitas tinggi, layanan pelanggan yang ramah, dan pengiriman yang tepat waktu. Dengan pengalaman dan dedikasi, kami membangun reputasi sebagai penyedia Cookies dan Cake terpercaya. Bergabunglah dengan keluarga kami dan rasakan sendiri mengapa kami dipercaya oleh banyak pelanggan!</p>
+      </div>
+      
+      <div class="features">
+        <div class="feature-card">
+          <i class="fas fa-cake"></i>
+          <h3>Mini Cake Thailand</h3>
+          <p>Mini Cake kami adalah kue kecil yang dikemas dengan rasa besar. Dibuat dengan bahan-bahan berkualitas dan diproses dengan hati-hati, setiap mini cake memiliki tekstur yang lembut dan rasa yang lezat. Cocok untuk dinikmati sebagai camilan sehari-hari atau sebagai hadiah untuk orang tersayang. Dengan ukuran yang mungil, mini cake kami dapat dinikmati dalam setiap kesempatan.</p>
+        </div>
+        
+        <div class="feature-card">
+          <i class="fas fa-cookie"></i>
+          <h3>Cookies</h3>
+          <p>Dari Klasik hingga Kreatif! Nikmati koleksi cookies kami dengan aneka rasa yang lezat, mulai dari cokelat, vanila, hingga rasa unik lainnya. Setiap gigitan menghadirkan kelezatan yang memanjakan lidah.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Hubungi kami:</p>
+    <div class="social-links">
+      <a href="https://wa.me/6289670206710" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p>&copy; 2024 Chaho Bites. Semua hak dilindungi.</p>
+  </footer>
+</body>
+</html>
