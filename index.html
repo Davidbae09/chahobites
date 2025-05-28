@@ -199,14 +199,86 @@
       margin: 40px 15px 40px 15px;
     }
   }
+  .hero {
+    background-color: #f8ecd4;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 20px auto 40px auto;
+    max-width: 800px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    color: #d2691e;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #6b4b2d;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+    margin-bottom: 60px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+    color: #d2691e;
+    margin-bottom: 15px;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .feature-card {
+    background-color: #fff5e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    max-width: 350px;
+    flex: 1 1 300px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.4rem;
+    color: #8b4513;
+    margin-top: 10px;
+  }
+
+  .feature-card p {
+    font-size: 1rem;
+    color: #6b4b2d;
+    line-height: 1.5;
+  }
 </style>
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <img src="./icon.jpeg" alt="Logo Chaho Bites" class="site-logo" />
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="./icon.jpeg" alt="Logo Chaho Bites" class="navbar-logo" />
+      <span>Chaho Bites</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tentang-kami.html">Tentang Kami</a></li>
+    </ul>
+  </nav>
   <div class="container" role="main">
-    <header>
-      <!-- Logo di pojok -->
-
       <h1 class="logo">Chaho Bites</h1>
       <p class="tagline">Kenikmatan di Setiap Gigitan!</p>
 
