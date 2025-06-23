@@ -7,6 +7,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap');
 
+    /* General Styles */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -23,6 +24,7 @@
       position: relative;
     }
 
+    /* Hero Section */
     .hero {
       background-color: #f8ecd4;
       padding: 60px 20px;
@@ -47,6 +49,7 @@
       margin: 0 auto;
     }
 
+    /* About Container */
     .about-container {
       display: flex;
       flex-direction: column;
@@ -78,6 +81,7 @@
       color: #6b4b2d;
     }
 
+    /* Features Section */
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -123,6 +127,7 @@
       line-height: 1.6;
     }
 
+    /* Footer */
     footer {
       margin-top: 60px;
       padding: 20px 0;
@@ -144,45 +149,32 @@
       color: #b85e15;
     }
 
+    /* Media Queries for general content responsiveness */
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2rem;
       }
-      
       .about-content h2 {
         font-size: 1.8rem;
       }
-      
       .feature-card {
         padding: 20px;
       }
-      
       .feature-card h3 {
         font-size: 1.5rem;
       }
     }
 
     @media (max-width: 480px) {
-      .nav-brand {
-        font-size: 1.2rem;
-      }
-      
-      .nav-links {
-        gap: 10px;
-      }
-      
       .hero h1 {
         font-size: 1.8rem;
       }
-      
       .about-content {
         padding: 20px;
       }
     }
-    
   </style>
-  <link rel="stylesheet" href="navbar.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="navbar.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <nav class="navbar">
@@ -190,6 +182,11 @@
       <img src="./icon.jpeg" alt="Logo Chaho Bites" class="navbar-logo" />
       <span>Chaho Bites</span>
     </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tentang-kami.html">Tentang Kami</a></li>
@@ -209,14 +206,14 @@
         <h2>Kami Chaho Cakes</h2>
         <p>Kepercayaan Anda adalah prioritas kami. Kami berkomitmen untuk menyajikan produk berkualitas tinggi, layanan pelanggan yang ramah, dan pengiriman yang tepat waktu. Dengan pengalaman dan dedikasi, kami membangun reputasi sebagai penyedia Cookies dan Cake terpercaya. Bergabunglah dengan keluarga kami dan rasakan sendiri mengapa kami dipercaya oleh banyak pelanggan!</p>
       </div>
-      
+
       <div class="features">
         <div class="feature-card">
           <i class="fas fa-cake"></i>
           <h3>Mini Cake Thailand</h3>
           <p>Mini Cake kami adalah kue kecil yang dikemas dengan rasa besar. Dibuat dengan bahan-bahan berkualitas dan diproses dengan hati-hati, setiap mini cake memiliki tekstur yang lembut dan rasa yang lezat. Cocok untuk dinikmati sebagai camilan sehari-hari atau sebagai hadiah untuk orang tersayang. Dengan ukuran yang mungil, mini cake kami dapat dinikmati dalam setiap kesempatan.</p>
         </div>
-        
+
         <div class="feature-card">
           <i class="fas fa-cookie"></i>
           <h3>Cookies</h3>
@@ -233,5 +230,6 @@
     </div>
     <p>&copy; 2024 Chaho Bites. Semua hak dilindungi.</p>
   </footer>
-</body>
+
+  <script src="scripts.js"></script> </body>
 </html>
