@@ -5,31 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chaho Bites - Kenikmatan di Setiap Gigitan</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins :wght@300;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap');
+
+  /* General Styles */
+  html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
 
   body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #fff5e6;
-    color: #4b2e15;
-    position: relative;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5e6; /* Warna latar belakang yang Anda inginkan */
+      color: #4b2e15; /* Warna teks yang Anda inginkan */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
   }
 
+  main {
+      flex: 1;
+  }
+
+  /* Container Styles */
   .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
   }
 
+  /* Header/Hero Section Styles */
   header {
     margin-bottom: 60px;
     position: relative;
   }
 
   .site-logo {
-    position: absolute; /* Changed from fixed to absolute */
+    position: absolute;
     top: 20px;
     left: 20px;
     width: 60px;
@@ -111,7 +127,7 @@
     line-height: 1.7;
   }
 
-  .promo-list li, .testimonial-list li  {
+  .promo-list li, .testimonial-list li {
     margin-bottom: 20px;
     position: relative;
     padding-left: 30px;
@@ -163,11 +179,12 @@
   }
 
   footer {
-    margin-top: 20px;
+    margin-top: auto;
     padding: 20px 0;
     font-size: 0.9rem;
     color: #8c6d4a;
     border-top: 1px solid #d2a679;
+    width: 100%;
   }
 
   .social-links a {
@@ -199,73 +216,205 @@
       margin: 40px 15px 40px 15px;
     }
   }
-  .hero {
-    background-color: #f8ecd4;
-    padding: 60px 20px;
-    text-align: center;
+
+  /* Products Section */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background-color: white;
     border-radius: 15px;
-    margin: 20px auto 40px auto;
-    max-width: 800px;
-  }
-
-  .hero h1 {
-    font-size: 2.4rem;
-    color: #d2691e;
-    margin-bottom: 20px;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #6b4b2d;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .about-container {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.8s ease-in-out;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding: 0 20px;
-    margin-bottom: 60px;
-  }
+    justify-content: space-between;
+    height: 100%;
+}
 
-  .about-content h2 {
-    font-size: 2rem;
-    color: #d2691e;
-    margin-bottom: 15px;
-  }
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-  .features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-
-  .feature-card {
-    background-color: #fff5e6;
+.product-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    max-width: 350px;
-    flex: 1 1 300px;
-  }
+    margin-bottom: 15px;
+    cursor: pointer;
+}
 
-  .feature-card h3 {
-    font-size: 1.4rem;
-    color: #8b4513;
-    margin-top: 10px;
-  }
+.product-card h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin: 10px 0;
+    flex-grow: 1;
+}
 
-  .feature-card p {
-    font-size: 1rem;
-    color: #6b4b2d;
-    line-height: 1.5;
-  }
+.product-card p {
+    color: #777;
+    font-size: 1em;
+    margin: 10px 0;
+    margin-top: auto;
+}
+
+.product-card .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.product-card button {
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-card button.detail-btn {
+    background-color: #8b4513;
+}
+
+.product-card button:hover {
+    transform: scale(1.05);
+}
+
+.product-card button.detail-btn:hover {
+    background-color: #a05b21;
+}
+
+/* MODAL STYLES (Pastikan ini selalu yang paling akhir di dalam <style> untuk prioritas) */
+.detail-modal, .zoom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Pastikan z-index sangat tinggi */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.detail-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+#modal_image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.zoom-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+    z-index: 2001; /* Z-index sedikit lebih tinggi dari modal itu sendiri jika perlu */
+}
+
+.zoom-modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.close-zoom {
+    position: absolute;
+    top: -20px; /* Disesuaikan untuk desktop agar tidak terlalu jauh */
+    right: -20px; /* Disesuaikan untuk desktop agar tidak terlalu jauh */
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 2002; /* Pastikan ini paling atas */
+}
+
+.close-zoom:hover {
+    background-color: #c0392b;
+}
+
+/* CSS untuk tombol Tutup di modal detail */
+.modal-close-btn {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.modal-close-btn:hover {
+    background-color: #b85e15;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+    /* Perbaikan posisi tombol X untuk mobile */
+    .close-zoom {
+        top: 5px; /* Sesuaikan lebih dekat ke sudut */
+        right: 5px; /* Sesuaikan lebih dekat ke sudut */
+        font-size: 24px; /* Sedikit lebih kecil untuk mobile */
+        width: 30px; /* Ukuran lebih kecil */
+        height: 30px; /* Ukuran lebih kecil */
+        line-height: 30px;
+        box-shadow: none; /* Opsional: hapus bayangan di mobile */
+    }
+}
 </style>
-<link rel="stylesheet" href="navbar.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="navbar.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <nav class="navbar">
@@ -273,6 +422,11 @@
       <img src="./icon.jpeg" alt="Logo Chaho Bites" class="navbar-logo" />
       <span>Chaho Bites</span>
     </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tentang-kami.html">Tentang Kami</a></li>
@@ -282,7 +436,6 @@
       <h1 class="logo">Chaho Bites</h1>
       <p class="tagline">Kenikmatan di Setiap Gigitan!</p>
 
-      <!-- Carousel -->
       <div class="carousel" id="carousel">
         <img src="./produk(1).jpeg" alt="Produk 1" class="active">
         <img src="./produk(2).jpeg" alt="Produk 2">
@@ -298,6 +451,38 @@
       </p>
     </section>
 
+    <section aria-labelledby="products-section">
+      <h2 id="products-section">Produk Kami</h2>
+      <div class="products">
+        <div class="product-card">
+            <img src="./produk(1).jpeg" alt="Mini Cake Thailand" class="zoomable" onclick="showZoomModal('./produk(1).jpeg')">
+            <h3>Mini Cake Thailand</h3>
+            <p>Rp 5.000</p>
+            <div class="button-group">
+                <button class="detail-btn" onclick="showDetailModal('Mini Cake Thailand', './produk(1).jpeg', 'Rasa Otentik dalam Ukuran Mini yang Menggemaskan', '5.000')">Detail</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="./produk(2).jpeg" alt="Cookies" class="zoomable" onclick="showZoomModal('./produk(2).jpeg')">
+            <h3>Cookies</h3>
+            <p>Rp 15.000</p>
+            <div class="button-group">
+                <button class="detail-btn" onclick="showDetailModal('Cookies', './produk(2).jpeg', 'Nikmati koleksi cookies kami dengan aneka rasa yang lezat, mulai dari cokelat, vanila, hingga rasa unik lainnya. Setiap gigitan menghadirkan kelezatan yang memanjakan lidah. Pesan sekarang dan temukan favoritmu', '15.000')">Detail</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="./produk(3).jpeg" alt="Cookies Custom" class="zoomable" onclick="showZoomModal('./produk(3).jpeg')">
+            <h3>Cookies Custom</h3>
+            <p>Rp 35.000</p>
+            <div class="button-group">
+                <button class="detail-btn" onclick="showDetailModal('Cookies Custom', './produk(3).jpeg', 'Buat Camilan Impianmu Sendiri! Pilih bentuk, rasa, dan desain sesuai keinginanmu. Cocok untuk acara spesial, hadiah, atau sekadar memanjakan diri sendiri. Pesan sekarang dan nikmati cookies yang unik dan personal', '35.000')">Detail</button>
+            </div>
+        </div>
+      </div>
+    </section>
+
     <section aria-labelledby="why-choose">
       <h2 id="why-choose">Mengapa Memilih Chaho Bites?</h2>
       <ul class="promo-list">
@@ -306,7 +491,7 @@
         <li><strong>Dibuat Segar Setiap Hari:</strong> Kami memanggang dalam jumlah kecil sehingga Anda selalu menikmati produk kami dalam keadaan paling segar dengan aroma yang tak tertahankan.</li>
         <li><strong>Beragam Rasa & Camilan:</strong> Dari kue kering cokelat klasik hingga kue red velvet yang kaya dan spesial musiman, ada sesuatu untuk setiap selera manis.</li>
         <li><strong>Dibuat dengan Tangan:</strong> Setiap kue dan kue kering dibentuk dan dihias dengan tangan, memastikan kualitas artisanal yang unik yang tidak dapat Anda temukan di tempat lain.</li>
-        <li><strong>Hadiah Sempurna & Kue Perayaan:</strong> Rayakan momen penting, hari raya, atau kejutan untuk orang terkasih dengan kotak hadiah yang indah dan kue kustom kami.</li>
+        <li><strong>Hadiah Sempurna & Kue Perayaan:</strong> Rayakan momen penting, hari raya atau kejutan untuk orang terkasih dengan kotak hadiah yang indah dan kue kustom kami.</li>
         <li><strong>Pengemasan Ramah Lingkungan:</strong> Kami peduli pada planet ini sama seperti kepuasan Anda. Pengemasan kami menggunakan bahan daur ulang dan ramah lingkungan.</li>
         <li><strong>Jaminan Kepuasan Pelanggan:</strong> Kebahagiaan Anda adalah prioritas kami. Jika Anda tidak puas, kami akan memperbaikinya dengan penggantian atau pengembalian uang—tanpa pertanyaan.</li>
       </ul>
@@ -315,8 +500,8 @@
     <section aria-labelledby="our-story">
       <h2 id="our-story">Kisah Kami</h2>
       <p class="description">
-        Chaho Bites dimulai sebagai proyek kecil di dapur rumah yang nyaman, terinspirasi oleh resep keluarga yang nostalgis dan cinta untuk berbagi kebahagiaan melalui makanan manis. 
-        Selama bertahun-tahun, toko kue kecil kami telah tumbuh dengan dukungan tulus dari komunitas kami, selalu menjaga dedikasi yang sama terhadap kualitas, rasa, dan perhatian kepada pelanggan. 
+        Chaho Bites dimulai sebagai proyek kecil di dapur rumah yang nyaman, terinspirasi oleh resep keluarga yang nostalgis dan cinta untuk berbagi kebahagiaan melalui makanan manis.
+        Selama bertahun-tahun, toko kue kecil kami telah tumbuh dengan dukungan tulus dari komunitas kami, selalu menjaga dedikasi yang sama terhadap kualitas, rasa, dan perhatian kepada pelanggan.
         Kami percaya bahwa kue dan kue kering bukan hanya makanan penutup—mereka adalah potongan kecil kebahagiaan yang dimaksudkan untuk menyatukan orang-orang.
       </p>
     </section>
@@ -329,7 +514,7 @@
           <div class="testimonial-author">— Maya S.</div>
         </li>
         <li>
-          Kue-kue ini sangat indah dan lezat! Sempurna untuk pesta ulang tahun saya. Semua orang terus bertanya dari mana mereka berasal.
+          Kue-ku ini sangat indah dan lezat! Sempurna untuk pesta ulang tahun saya. Semua orang terus bertanya dari mana mereka berasal.
           <div class="testimonial-author">— Rizky W.</div>
         </li>
         <li>
@@ -361,15 +546,62 @@
       <p>&copy; 2024 Chaho Bites. Semua hak dilindungi.</p>
     </footer>
   </div>
+
+  <div id="detail_modal" class="detail-modal">
+    <div class="detail-modal-content">
+        <h3 id="modal_name"></h3>
+        <img id="modal_image" src="" alt="Product Image">
+        <p id="modal_description"></p>
+        <p class="price" id="modal_price"></p>
+        <button class="modal-close-btn" onclick="closeDetailModal()">Tutup</button>
+    </div>
+  </div>
+
+  <div id="zoom_modal" class="zoom-modal">
+    <div class="zoom-modal-content">
+        <span class="close-zoom" onclick="closeZoomModal()">&times;</span>
+        <img id="zoom_image" src="" alt="Zoomed Image">
+    </div>
+  </div>
+
   <script>
+    // Fungsi modal Detail dan Zoom
+    function showDetailModal(name, image, description, price) {
+        const detailModal = document.getElementById('detail_modal');
+        document.getElementById('modal_name').innerText = name;
+        document.getElementById('modal_image').src = image;
+        document.getElementById('modal_description').innerText = description;
+        document.getElementById('modal_price').innerText = `Rp ${price}`;
+        detailModal.style.display = 'flex';
+    }
+
+    function closeDetailModal() {
+        document.getElementById('detail_modal').style.display = 'none';
+    }
+
+    function showZoomModal(image) {
+        const zoomModal = document.getElementById('zoom_modal');
+        document.getElementById('zoom_image').src = image;
+        zoomModal.style.display = 'flex';
+    }
+
+    function closeZoomModal() {
+        document.getElementById('zoom_modal').style.display = 'none';
+    }
+
+    // Carousel script
     const images = document.querySelectorAll('.carousel img');
     let index = 0;
 
     setInterval(() => {
       images.forEach(img => img.classList.remove('active'));
       index = (index + 1) % images.length;
-      images[index].classList.add('active');
-    }, 3000); // Ganti gambar setiap 3 detik
+      images [index].classList.add('active');
+    }, 3000);
+
+    // Hamburger Menu Script (Ini akan dipindahkan ke scripts.js eksternal)
+    // document.addEventListener('DOMContentLoaded', () => { ... }); // dihapus dari sini
   </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
